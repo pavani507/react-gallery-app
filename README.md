@@ -1,3 +1,14 @@
+## Instructions
+
+1. You will need to have an API Key from Flickr. With this API key, you need to:
+
+2. Create a config.js file. The config file should contain the following:
+
+```js
+const apiKey = "YOUR API KEY";
+export default apiKey;
+```
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
