@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 
 import Header from "./Header";
-import Gallery from "./Gallery";
+import GalleryContainer from "./GalleryContainer";
 
 import notFound from "./notFound";
 
@@ -15,10 +15,36 @@ class App extends React.Component {
           <Header />
           <Switch>
             {/*When the app first loads. Cats images are load. */}
-            <Route exact path="/" render={props => <Gallery topic="cats" />} />
+            <Route
+              exact
+              path="/"
+              render={props => <GalleryContainer topic="cats" />}
+            />
+            <Route
+              exact
+              path="/cats"
+              render={props => <GalleryContainer topic="cats" />}
+            />
+            <Route
+              exact
+              path="/dogs"
+              render={props => <GalleryContainer topic="dogs" />}
+            />
+            <Route
+              exact
+              path="/computers"
+              render={props => <GalleryContainer topic="computers" />}
+            />
+            <Route
+              exact
+              path="/rainbows"
+              render={props => <GalleryContainer topic="rainbows" />}
+            />
             <Route
               path="/search/:topic"
-              render={props => <Gallery topic={props.match.params.topic} />}
+              render={props => (
+                <GalleryContainer topic={props.match.params.topic} />
+              )}
             />
             <Route component={notFound} />
           </Switch>
